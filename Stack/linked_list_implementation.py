@@ -25,16 +25,6 @@ class Stack():
         self.length += 1
 
     def pop(self):
-        if not self.top:
-          return None
-        if self.top == self.bottom:
-          self.bottom = None
-        holding_pointer = self.top
-        self.top = self.top.next
-        self.length -= 1
-        return holding_pointer.value
-
-    def pop(self):
         if self.top is None:  # If the stack is empty, we print an appropriate message
             print("Stack empty")
         else:  # Else we make the top pointer point to the next of the top pointer and decrease the length by 1, effectively deleting the top element.
