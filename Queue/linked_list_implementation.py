@@ -27,11 +27,14 @@ class Queue():
     def dequeue(self):
         if self.first is None:
             print("Queue is empty")
+            return
         else:
+            holding_pointer = self.first
             self.first = self.first.next
             self.length -= 1
             if self.length == 0:
                 self.last = None
+            return holding_pointer.data
 
     def print_queue(self):
         if self.first is None:
