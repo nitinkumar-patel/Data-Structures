@@ -137,21 +137,20 @@ class BinarySearchTree:
 
 if __name__=='__main__':
     tree = BinarySearchTree()
-    tree.insert(9)
+    l = [9, 4, 6, 20, 170, 15, 1]
+    tree.insert(l[0])
     root=tree.root
-    tree.insert(4)
-    tree.insert(6)
-    tree.insert(20)
-    tree.insert(170)
-    tree.insert(15)
-    tree.insert(1)
+    for i in l[1:]:
+        tree.insert(i)
+    print("--------------Original BST-------------------")
+    print2D(root)
+
     tree.insert(4)  # Not allow to add duplicate node in BST.
 
     print(tree.search(9))  # Found
     print(tree.search(10))  # Not Found
     print(tree.search(170))  # Found
-    print("--------------Original BST-------------------")
-    print2D(root)
+
     print("--------------Remove 170-------------------")
     tree.remove(170)
     print2D(root)
